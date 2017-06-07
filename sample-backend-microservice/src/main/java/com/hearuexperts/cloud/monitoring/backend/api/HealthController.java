@@ -10,7 +10,7 @@ public class HealthController {
     @CrossOrigin(origins = "http://localhost:4200")
     @RequestMapping("/")
     public String index() {
-            return "QMON Backend is up and running!";
+            return "CMON Backend is up and running!";
     }
 
 }
