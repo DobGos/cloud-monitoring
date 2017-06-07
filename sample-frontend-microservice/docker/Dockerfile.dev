@@ -1,0 +1,28 @@
+# Create image based on the official Node 6 image from dockerhub
+FROM node:6.10.3-alpine
+
+# Create a directory where our app will be placed
+RUN mkdir -p /usr/src/app
+
+# Change directory so that our commands run inside this new directory
+WORKDIR /usr/src/app
+
+# Copy dependency definitions
+COPY package.json /usr/src/app
+
+# Update aptitude with new repo
+# RUN npm config set proxy http://107.15.40.4:8080 
+RUN  npm config set https-proxy http://107.15.40.4:8080  && \
+     npm install && \
+     npm install -g @angular/cli@1.0.4 
+
+# Get all the code needed to run the app
+COPY . /usr/src/app
+
+RUN ng build 
+
+# Expose the port the app runs in
+EXPOSE 4200
+
+# Serve the app
+CMD ["npm"  , "start"]
