@@ -5,6 +5,5 @@ It is created as part of my exploration of tools available to monitor microservi
 ### Build docker image
 Run:
 ```
-gradle buildDocker
+sudo gradle buildDocker
 ```
-Docker image will be produced in `build/docker` folder.
