@@ -37,9 +37,15 @@ sudo docker build -t --force-rm sample-frontend-microservice-prod:latest .
 
 ## Run the docker image in a container
 ```
-docker run -d --name sample-frontend-microservice -p 4200:4200  sample-frontend-microservice:latest
+docker run -d --name sample-frontend-microservice -p 4200:80  --name sample-frontend-microservice sample-frontend-microservice:latest
 ```
 
-## Further help
+## Stop frontend microservice docker container
+```
+sudo docker stop sample-frontend-microservice
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### Re-run deployed container
+```
+sudo docker run -p 4200:80 -td sample-frontend-microservice
+```
