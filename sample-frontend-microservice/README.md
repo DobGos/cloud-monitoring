@@ -35,7 +35,7 @@ sudo docker build -t --force-rm sample-frontend-microservice-prod:latest .
 
 ## Run the docker image in a container
 ```
-docker run -d --name sample-frontend-microservice -p 4200:80  --name sample-frontend-microservice sample-frontend-microservice:latest
+sudo docker run -d -p 4200:80 --name sample-frontend-microservice sample-frontend-microservice:latest
 ```
 
 ## Stop frontend microservice docker container
@@ -46,4 +46,21 @@ sudo docker stop sample-frontend-microservice
 ### Re-run deployed container
 ```
 sudo docker run -p 4200:80 -td sample-frontend-microservice
+```
+
+### To save the image
+```
+sudo docker save -o sample-frontend-microservice-latest.tar sample-frontend-microservice:latest
+```
+### To import saved docker image
+```
+sudo docker import ./sample-frontend-microservice-latest.tar sample-frontend-microservice:latest
+```
+### SSH over proxy
+```
+ssh -i "PUBLIC_KEY.PEM" USERNAME@REMOTE_HOST -o "ProxyCommand=nc -X connect -x PROXYHOST:PROXYPORT %h %p"
+```
+### SFTP over proxy
+```
+sftp -i "PUBLIC_KEY.PEM" -o "ProxyCommand=nc -X connect -x PROXYHOST:PROXYPORT %h %p" USERNAME@REMOTE_HOST:[REMOTE_FOLDER]
 ```
