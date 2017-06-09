@@ -11,7 +11,6 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 
 # Update aptitude with new repo
-# RUN npm config set proxy http://107.15.40.4:8080 
 RUN  npm config set https-proxy http://107.15.40.4:8080  && \
      npm install && \
      npm install -g @angular/cli@1.0.4 
@@ -19,7 +18,7 @@ RUN  npm config set https-proxy http://107.15.40.4:8080  && \
 # Get all the code needed to run the app
 COPY . /usr/src/app
 
-RUN ng build 
+RUN npm run build:dev
 
 # Expose the port the app runs in
 EXPOSE 4200
