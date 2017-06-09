@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo docker run -p 4200:80 -td sample-frontend-microservice
+sudo docker run -p 80:4200 --name sample-frontend-microservice -td sample-frontend-microservice
