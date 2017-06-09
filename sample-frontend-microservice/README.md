@@ -52,9 +52,21 @@ sudo docker run -p 4200:80 -td sample-frontend-microservice
 ```
 sudo docker save -o sample-frontend-microservice-latest.tar sample-frontend-microservice:latest
 ```
+### To load saved docker image
+```
+sudo docker load --input ./sample-frontend-microservice-latest.tar
+```
 ### To import saved docker image
 ```
 sudo docker import ./sample-frontend-microservice-latest.tar sample-frontend-microservice:latest
+```
+### To print container app output
+```
+sudo docker logs sample-frontend-microservice
+```
+### To enter container
+```
+sudo docker exec -it sample-frontend-microservice /bin/bash
 ```
 ### SSH over proxy
 ```
