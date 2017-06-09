@@ -13,7 +13,7 @@ COPY package.json /usr/src/app
 # Update aptitude with new repo
 RUN  npm config set https-proxy http://107.15.40.4:8080  && \
      npm install && \
-     npm install -g @angular/cli@1.0.4 
+     npm install -g @angular/cli@1.1.1 
 
 # Get all the code needed to run the app
 COPY . /usr/src/app
