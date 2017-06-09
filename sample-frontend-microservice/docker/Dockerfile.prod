@@ -12,7 +12,7 @@ COPY package.json /usr/src/app
 
 # Update aptitude with new repo
 RUN  npm install && \
-     npm install -g @angular/cli@1.0.4 
+     npm install -g @angular/cli@1.1.1 
 
 # Get all the code needed to run the app
 COPY . /usr/src/app
