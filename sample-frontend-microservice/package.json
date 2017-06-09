@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve -H 0.0.0.0 ",
+    "start:dev": "ng serve -H 0.0.0.0",
+    "start": "ng serve -H 0.0.0.0 --disable-host-check",
     "build:dev": "ng build",
     "build:prod": "ng build -prod",
     "test": "ng test",
@@ -27,7 +28,7 @@
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.4",
+    "@angular/cli": "1.1.1",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
