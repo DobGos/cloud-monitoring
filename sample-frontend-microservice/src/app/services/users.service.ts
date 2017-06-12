@@ -15,6 +15,7 @@ export class UsersService {
   ) { }
 
   getUsers(): Observable<User[]> {
+    console.log("URL: " + this.userUrl);
     return this.http.get(this.userUrl)
       .map(this.extractData)
       .catch(this.handleError);
@@ -22,7 +23,7 @@ export class UsersService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body.data || {};
+    return body || {};
   }
 
   private handleError(error: Response | any) {

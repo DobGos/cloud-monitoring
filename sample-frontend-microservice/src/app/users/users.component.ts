@@ -11,7 +11,7 @@ import { User } from '../domain/user';
 export class UsersComponent implements OnInit {
 
   public errorMessage: string;
-  public users;
+  public users : User[];
 
   constructor(private usersService: UsersService) { }
 
@@ -20,6 +20,7 @@ export class UsersComponent implements OnInit {
   }
 
   getUsers() {
+    console.log("getUsers() invoked...");
     this.usersService.getUsers()
       .subscribe(
       data => this.users = data,
