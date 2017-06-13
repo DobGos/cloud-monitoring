@@ -6,4 +6,4 @@ I am creating two sample microservices which will run on two AWS EC2 boxes. Micr
 * [Sample backend microservice](./sample-backend-microservice) - Java 8, spring-boot.
 * [Sample frontend microservice](./sample-frontend-microservice) - Angular (v.4), Node.js.
 
-AWS X-Ray presented here: [An Overview of Designing Microservices - March 2017 AWS](./Designing Microservices - Monitoring.md) by Peter Dalbhanjan.
+AWS X-Ray presented here: [An Overview of Designing Microservices - March 2017 AWS](./designing-microservices-monitoring.md) by Peter Dalbhanjan.
